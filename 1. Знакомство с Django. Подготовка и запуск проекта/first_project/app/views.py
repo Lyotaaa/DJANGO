@@ -9,7 +9,7 @@ def home_view(request):
     pages = {
         "Главная страница": reverse("home"),
         "Показать текущее время": "current_time/",
-        "Показать содержимое рабочей директории": "workdir/",
+        "Показать содержимое рабочей директории": "workdir_view/",
     }
     context = {"pages": pages}
     return render(request, template_name, context)
