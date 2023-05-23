@@ -142,7 +142,9 @@ ENV/
 env.bak/
 venv.bak/
 .idea
-
+Новая папка
+land
+Текстовый документ.txt
 
 # Spyder project settings
 .spyderproject
