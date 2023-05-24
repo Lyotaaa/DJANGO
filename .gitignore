@@ -148,6 +148,7 @@ land
 landing
 rec_venv
 migrations
+pag_venv
 
 # Spyder project settings
 .spyderproject
