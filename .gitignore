@@ -146,6 +146,8 @@ venv.bak/
 land
 Текстовый документ.txt
 landing
+rec_venv
+migrations
 
 # Spyder project settings
 .spyderproject
