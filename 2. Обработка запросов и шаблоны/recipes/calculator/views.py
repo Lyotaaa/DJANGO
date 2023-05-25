@@ -1,6 +1,6 @@
 from pprint import pprint
 from django.http import HttpResponse
-from django.shortcuts import render, reverse
+from django.shortcuts import redirect, render, reverse
 
 DATA = {
     "omlet": {
@@ -9,8 +9,8 @@ DATA = {
         "соль, ч.л.": 0.5,
     },
     "pasta": {
-        "макароны, г": 0.3,
-        "сыр, г": 0.05,
+        "макароны, г": 300,
+        "сыр, г": 50,
     },
     "buter": {
         "хлеб, ломтик": 1,
@@ -20,20 +20,21 @@ DATA = {
     },
     # можете добавить свои рецепты ;)
 }
-
-
 def index(request):
+    return redirect("/recipes/")
+
+def recipes(request):
     pages = {
         "Главная страница": reverse("demo"),
-        "Омлет": "omlet/",
-        "Паста": "pasta/",
-        "Бутер": "buter/",
+        "Омлет": "omlet/?servings=",
+        "Паста": "pasta/?servings=",
+        "Бутер": "buter/?servings=",
     }
     context = {"pages": pages}
     return render(request, "demo.html", context)
 
 
-def recipes(request, meal):
+def recipe_output(request, meal):
     servings = request.GET.get("servings")
     new_data = dict()
     if meal in DATA:
