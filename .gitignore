@@ -152,6 +152,7 @@ rec_venv
 migrations
 pag_venv
 venv_base
+book_venv
 
 # Spyder project settings
 .spyderproject
