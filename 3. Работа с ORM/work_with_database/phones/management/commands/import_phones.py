@@ -4,8 +4,6 @@ from phones.models import Phone
 
 
 class Command(BaseCommand):
-    def __init__(self, path=path):
-        self.path = path
     def add_arguments(self, parser):
         pass
 
@@ -19,6 +17,6 @@ class Command(BaseCommand):
                 image = phone["image"],
                 release_date = phone["release_date"],
                 lte_exists = phone["lte_exists"],
-                slug = phone["name"]
+                slug = phone["name"].lower().replace(" ", "-"),
             )
-        return model.save()
+            model.save()
