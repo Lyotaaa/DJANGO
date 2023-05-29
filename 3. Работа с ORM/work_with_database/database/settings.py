@@ -81,7 +81,7 @@ DATABASES = {
         "ENGINE": f"django.db.backends.postgresql",
         "NAME": info_database()[1],
         "USER": info_database()[0],
-        "PASSWORD": info_database()[2]
+        "PASSWORD": info_database()[2],
     }
 }
 
@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 # Default primary key field type

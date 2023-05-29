@@ -20,7 +20,7 @@ from phones.views import index, show_product, show_catalog
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', index),
-    path('catalog/', show_catalog, name='catalog'),
-    path('catalog/<slug:slug>/', show_product, name='phone'),
+    path("", index),
+    path("catalog/", show_catalog, name="catalog"),
+    path("catalog/<slug:slug>/", show_product, name="phone"),
 ]
