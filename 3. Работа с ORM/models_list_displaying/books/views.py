@@ -19,11 +19,11 @@ def show_book_date(request, date):
     except TypeError:
         previous_date = ""
     try:
-        next_date = Book.objects.filter(pub_date__lt=date).values("pub_date").first()["pub_date"].strftime("%Y-%m-%d")
+        next_date = Book.objects.filter(pub_date__gt=date).values("pub_date").first()["pub_date"].strftime("%Y-%m-%d")
     except TypeError:
         next_date = ""
     context = {
-        "all_books": all_books,
+        "books": all_books,
         "previous": previous_date,
         "next": next_date
     }

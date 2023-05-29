@@ -12,6 +12,7 @@ db.sqlite3
 db.sqlite3-journal
 media
 __init__.py
+Test.py
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
@@ -153,6 +154,7 @@ migrations
 pag_venv
 venv_base
 book_venv
+test.py
 
 # Spyder project settings
 .spyderproject
@@ -278,3 +280,5 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django
+3. Работа с ORM/models_list_displaying/Test.py
+.gitignore
