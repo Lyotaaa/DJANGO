@@ -155,6 +155,7 @@ pag_venv
 venv_base
 book_venv
 test.py
+venv_migration
 
 # Spyder project settings
 .spyderproject
