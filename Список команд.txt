@@ -1,0 +1,19 @@
+Основные команды
+1. python -m venv ... - Создание окружения
+2. ...\Scripts\Activate.ps1 - Подключение к окружению
+3. pip install ... - установка библиотек
+4. pip freeze > requirements.txt - Создание файла с версиями библиотек
+5. django-admin startproject ... . - Создание проекта (С точкой одна папка, без вложенная папка)
+6. python manage.py startapp ... - Создание приложения
+7. createdb -U postgres ... - создание базы данных
+8. python manage.py makemigrations - Создание файлов миграции
+9. python manage.py migrate - Применяют миграции к БД
+10. python manage.py runserver - Запуск кода
+11. python manage.py migrate phones zero - Удаление БД и всех файлов миграции
+
+Регистация и настройка
+1. В setting прописать приложение 
+2. Прописать в DATABASES postgresql
+3. "NAME": info_database()[1],
+    "USER": info_database()[0],
+    "PASSWORD": info_database()[2], 
