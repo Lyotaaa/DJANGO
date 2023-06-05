@@ -155,6 +155,7 @@ book_venv
 test.py
 venv_migration
 m2m
+DB_info.py
 
 # Spyder project settings
 .spyderproject
