@@ -46,6 +46,7 @@ share/python-wheels/
 *.egg
 MANIFEST
 info_database.py
+DB_info.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -155,8 +156,7 @@ book_venv
 test.py
 venv_migration
 m2m
-DB_info.py
-
+1
 
 # Spyder project settings
 .spyderproject
