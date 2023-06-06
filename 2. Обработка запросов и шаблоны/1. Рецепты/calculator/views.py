@@ -20,8 +20,11 @@ DATA = {
     },
     # можете добавить свои рецепты ;)
 }
+
+
 def index(request):
     return redirect("/recipes/")
+
 
 def recipes(request):
     pages = {
