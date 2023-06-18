@@ -157,6 +157,7 @@ test.py
 venv_migration
 m2m
 1
+smart
 
 # Spyder project settings
 .spyderproject
