@@ -158,6 +158,7 @@ venv_migration
 m2m
 1
 smart
+logis
 
 # Spyder project settings
 .spyderproject
