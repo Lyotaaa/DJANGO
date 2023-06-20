@@ -20,4 +20,3 @@ class FullSensorSer(serializers.ModelSerializer):
     class Meta:
         model = Sensor
         fields = ["id", "name", "description", "measurements"]
-

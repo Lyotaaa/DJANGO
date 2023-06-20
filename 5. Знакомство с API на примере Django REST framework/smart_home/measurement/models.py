@@ -23,4 +23,5 @@ class Measurement(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата измерения")
     image = models.ImageField(null=True, blank=True, verbose_name="Изображение")
 
-#Sensor(name="Кухня", description="Датчик на кухне").save()
+
+# Sensor(name="Кухня", description="Датчик на кухне").save()
