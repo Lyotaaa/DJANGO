@@ -2,7 +2,7 @@
 
 Необходимо выполнить и предоставить на проверку задачу:
 
-[Backend для приложения с объявлениями](/7.%20%D0%A0%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%20%D0%B2%20DRF/).
+[Backend для приложения с объявлениями](./api_with_restrictions).
 
 Работа должна соответствовать принятому [стилю оформления кода](https://github.com/netology-code/codestyle/tree/master/python).
 
