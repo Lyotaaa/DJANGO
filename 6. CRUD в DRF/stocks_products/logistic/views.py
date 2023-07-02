@@ -4,6 +4,7 @@ from logistic.models import Product, Stock
 from logistic.serializers import ProductSerializer, StockSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
+
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
@@ -11,6 +12,7 @@ class ProductViewSet(ModelViewSet):
     filter_backends = [OrderingFilter, SearchFilter]
     ordering_fields = ["id", "title"]
     search_fields = ["title", "description"]
+
 
 class StockViewSet(ModelViewSet):
     queryset = Stock.objects.all()
