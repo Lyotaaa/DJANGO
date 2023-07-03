@@ -5,8 +5,6 @@ from advertisements.models import Advertisement
 
 
 class UserSerializer(serializers.ModelSerializer):
-    """Serializer для пользователя."""
-
     class Meta:
         model = User
         fields = (
@@ -18,8 +16,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class AdvertisementSerializer(serializers.ModelSerializer):
-    """Serializer для объявления."""
-
     creator = UserSerializer(
         read_only=True,
     )
@@ -36,20 +32,16 @@ class AdvertisementSerializer(serializers.ModelSerializer):
         )
 
     def create(self, validated_data):
-        """Метод для создания"""
-
-        # Простановка значения поля создатель по-умолчанию.
-        # Текущий пользователь является создателем объявления
-        # изменить или переопределить его через API нельзя.
-        # обратите внимание на `context` – он выставляется автоматически
-        # через методы ViewSet.
-        # само поле при этом объявляется как `read_only=True`
         validated_data["creator"] = self.context["request"].user
         return super().create(validated_data)
 
     def validate(self, data):
-        """Метод для валидации. Вызывается при создании и обновлении."""
-
-        # TODO: добавьте требуемую валидацию
-
+        if self.initial_data.get("status") == "CLOSED":
+            return data
+        request = self.context["request"]
+        if (
+            Advertisement.objects.filter(creator=request.user, status="OPEN").count()
+            >= 10
+        ):
+            raise serializers.ValidationError("Превышен лимит открытых объявлений")
         return data
