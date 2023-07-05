@@ -95,9 +95,9 @@ WSGI_APPLICATION = "api_with_restrictions.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "NAME", #DB_info()[0],
+        "NAME": DB_info()[0],  # "NAME", #
         "USER": "postgres",
-        "PASSWORD": "PASSWORD", #DB_info()[1],
+        "PASSWORD": DB_info()[1],  # "PASSWORD", #
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
