@@ -19,7 +19,14 @@ class AdvertisementViewSet(ModelViewSet):
     def get_permissions(self):
         if self.action in ["create"]:
             return [IsAuthenticated()]
-        if self.action in ["update", "partial_update", "destroy", "remove_from_favorites", "add_to_favoritea", "favorites"]:
+        if self.action in [
+            "update",
+            "partial_update",
+            "destroy",
+            "remove_from_favorites",
+            "add_to_favoritea",
+            "favorites",
+        ]:
             return [IsAuthenticated(), IsOwnerOrReadOnly()]
         if self.action == "retrieve":
             return [IsNotDraftOrIsOwner()]
