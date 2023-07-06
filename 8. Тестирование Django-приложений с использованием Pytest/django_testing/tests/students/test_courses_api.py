@@ -27,11 +27,17 @@ def course_factory():
 
 # Проверка получения курса
 @pytest.mark.django_db
-def test_first_course_check(client, course_factory):
-    courses = course_factory(_quantity=10)
-    course_id = courses[6].id
-    course_name = courses[6].name
+def test_first_course_check(client, student_factory, course_factory):
+    students = student_factory(_quantity=10)
+    courses = course_factory(_quantity=10, students=students)
     response = client.get(f"/courses/{courses[6].pk}/")
     assert response.status_code == 200
-    assert response.data["id"] == course_id
-    assert response.data["name"] == course_name
+    assert response.data["id"] == courses[6].id
+    assert response.data["name"] == courses[6].name
+    assert response.data["students"][5] == [i.id for i in students][5]
+
+
+# Проверка получения списка курсов
+@pytest.mark.django_db
+def test_course_list_check():
+    pass
