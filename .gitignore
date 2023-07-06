@@ -159,6 +159,7 @@ m2m
 smart
 logis
 api
+venv_test
 
 # Spyder project settings
 .spyderproject

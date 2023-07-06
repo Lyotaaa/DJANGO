@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
+from students.info_database import info_database
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -78,7 +80,9 @@ WSGI_APPLICATION = "django_testing.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "netology_django_testing",
+        "NAME": info_database()[0],  # "NAME",
+        "USER": "postgres",
+        "PASSWORD": info_database()[1],  # "PASSWORD"
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
