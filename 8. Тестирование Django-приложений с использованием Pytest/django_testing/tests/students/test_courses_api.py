@@ -25,7 +25,7 @@ def course_factory():
     return factory
 
 
-# """Проверка получения первого курса"""
+# Проверка получения курса
 @pytest.mark.django_db
 def test_first_course_check(client, course_factory):
     courses = course_factory(_quantity=10)
@@ -35,4 +35,3 @@ def test_first_course_check(client, course_factory):
     assert response.status_code == 200
     assert response.data["id"] == course_id
     assert response.data["name"] == course_name
-
