@@ -148,7 +148,6 @@ venv.bak/
 land
 landing
 rec_venv
-migrations
 pag_venv
 venv_base
 book_venv
